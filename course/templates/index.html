@@ -14,8 +14,9 @@
 
     <h2>Add a new course</h2>
     <form action="courses" method="POST">
+        {% csrf_token %}
         <label for="name">Name:</label>
-        <input type="text">
+        <input type="text" name="name">
         <label for="desc">Description:</label>
         <textarea name="desc"></textarea>
         <button type="submit">Add</button>
@@ -28,6 +29,14 @@
             <th>Date Added</th>
             <th>Actions</th>
         </tr>
+        {% for course in all_courses %}
+        <tr>
+            <td>{{ course.name }}</td>
+            <td>{{ course.desc }}</td>
+            <td>{{ course.created_at|date:"M jS Y g:iA"  }}</td>
+            <td><a href="/courses/destroy/{{ course.id }}">remove</a></td>
+        </tr>
+        {% endfor %}
     </table>
 
     {% endblock %}
