@@ -17,3 +17,17 @@ def create(request):
             for msg in errors.values():
                 messages.error(request, msg)
     return redirect("/")
+
+
+def destroy(request, course_id):
+    this_course = Course.objects.get(id=course_id)
+
+    if request.method == "GET":
+        context = {"this_course": this_course}
+        return render(request, "delete.html", context)
+
+    elif request.method == "POST":
+        if request.POST["confirm_delete"]:
+            this_course.delete()
+
+    return redirect("/")

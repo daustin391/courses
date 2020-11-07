@@ -12,6 +12,8 @@ body {
     margin: 0 auto;
 }
 
+li { color: #ff2674; }
+
 textarea,
 input,
 body {
@@ -29,7 +31,7 @@ th,
 textarea,
 input { padding: 3px; }
 
-:focus { outline: 5px auto #234975; }
+::focus { outline: 5px auto #234975; }
 
 textarea,
 table,
@@ -53,18 +55,20 @@ table {
     width: 100%;
 }
 
-
-button {
+#course__button {
     display: block;
     background-color: #bfff3c;
     color: #d62411;
+    width: 70px;
+    margin-left: auto;
+    grid-column: 2;
+}
+
+button {
     padding: 2px 4px;
     box-shadow: 2px 2px #7f0622;
     cursor: pointer;
-    width: 70px;
     height: 30px;
-    margin-left: auto;
-    grid-column: 2;
 }
 
 form {

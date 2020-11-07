@@ -19,8 +19,14 @@
         <input type="text" name="name">
         <label for="desc">Description:</label>
         <textarea name="desc"></textarea>
-        <button type="submit">Add</button>
+        <button type="submit" id="course__button">Add</button>
     </form>
+    <ul>
+        {% for msg in messages %}
+        <li>{{msg}}</li>
+        {% endfor %}
+
+    </ul>
     <h2>Courses</h2>
     <table>
         <tr>
