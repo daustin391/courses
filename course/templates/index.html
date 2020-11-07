@@ -13,11 +13,11 @@
     {% block delete %}
 
     <h2>Add a new course</h2>
-    <form action="courses">
+    <form action="courses" method="POST">
         <label for="name">Name:</label>
         <input type="text">
         <label for="desc">Description:</label>
-        <textarea name="desc" id="" cols="30" rows="10"></textarea>
+        <textarea name="desc"></textarea>
         <button type="submit">Add</button>
     </form>
     <h2>Courses</h2>
